@@ -402,11 +402,11 @@ class AuthenticationModel:
         if token:
             # if not token['username'] in self.credentials['usernames']:
             #     raise LoginError('User not authorized')
-            st.session_state['email'], st.session_state['name'], st.session_state['roles'] = \
-                self._get_user_variables(token['username'])
+            # st.session_state['email'], st.session_state['name'], st.session_state['roles'] = \
+            #     self._get_user_variables(token['username'])
             st.session_state['authentication_status'] = True
             st.session_state['username'] = token['username']
-            self.credentials['usernames'][token['username']]['logged_in'] = True
+            # self.credentials['usernames'][token['username']]['logged_in'] = True
             if self.path:
                 Helpers.update_config_file(self.path, 'credentials', self.credentials)
         return None
